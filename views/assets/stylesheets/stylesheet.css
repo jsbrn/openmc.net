@@ -1,0 +1,219 @@
+body {
+	background: url("../images/bg.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/*Panels/navbar*/
+
+.content, .navbar {
+	background: #fff;
+	padding: 10px;
+	min-width: 600px;
+
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #000000;
+	
+}
+
+.navbar {
+	-webkit-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
+	box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
+}
+
+.content {
+	margin: 0 auto;
+	width : 80%;
+	max-width: 900px;
+}
+
+.form {
+	width: 500px;
+	box-shadow: none;
+}
+
+
+/*Default table style*/
+
+table.default {
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+table.default td, table.default th {
+	padding: 5px 4px;
+	padding-left: 30px;
+}
+table.default tbody td {
+	font-size: 16px;
+}
+table.default tr:nth-child(even) {
+	background: #E2EFF5;
+}
+table.default thead {
+	background: #479BCF;
+	background: -moz-linear-gradient(top, #75b4db 0%, #59a5d3 66%, #479BCF 100%);
+	background: -webkit-linear-gradient(top, #75b4db 0%, #59a5d3 66%, #479BCF 100%);
+	background: linear-gradient(to bottom, #75b4db 0%, #59a5d3 66%, #479BCF 100%);
+}
+table.default thead th {
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: left;
+}
+table.default tfoot td {
+	font-size: 14px;
+}
+table.default center {
+	text-align: center;
+}
+
+/*Centered table with hidden borders*/
+table.invisible-centered {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/*Some custom stuff*/
+
+.navbar {
+	text-align: center;
+	display: inline-block;
+}
+
+a {
+	color: #2c9c28;
+	font-family: trebuchet MS;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #31ea62;
+}
+
+a.ul {
+	text-decoration: underline;
+}
+
+.navlink {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.nobg {
+	color: white;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.green-bold {
+	font-weight: bold;
+	font-size: 24px;
+	color: green;
+}
+
+.red-bold {
+	font-weight: bold;
+	font-size: 24px;
+	color: red;
+}
+
+.black-bold {
+	font-weight: bold;
+	font-size: 24px;
+	color: black;
+}
+
+.online {
+	background-image: url("../images/online.png");
+}
+
+.offline {
+	background-image: url("../images/offline.png");
+}
+
+.banned {
+	background-image: url("../images/banned.png");
+}
+
+.online-member {
+	background-image: url("../images/online-member.png");
+}
+
+.offline-member {
+	background-image: url("../images/offline-member.png");
+}
+
+.banned-member {
+	background-image: url("../images/banned-member.png");
+}
+
+.online, .offline, .banned, .offline-member, .online-member, .banned-member {
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 40px; /* Or size of icon + spacing */
+}
+
+/*Form stuff*/
+
+button, input, textarea, select {
+	-webkit-border-radius: 60;
+	-moz-border-radius: 60;
+	border-radius: 10px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 16px;
+	padding: 5px 10px 5px 10px;
+
+	background: #2fc72a;
+	color: #ffffff;
+	border: solid #1f8c35 2px;
+	text-decoration: none;
+}
+  
+button:hover {
+	background: #3beb44;
+	text-decoration: none;
+}
+
+input, select {
+	color: black;
+	background: white;
+	border: solid black 2px;
+	width: 100%;
+}
+
+select {
+	border-radius: 5px;
+	padding-left: 5px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+
+}
+
+/*IE*/
+select::-ms-expand {
+	display: none;
+}
+
+textarea {
+	border-radius: 5px;
+	background: #ffffff;
+	color: black;
+	text-decoration: none;
+	width: 100%;
+	border: solid black 2px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	resize: none;
+	margin-top: -2px;
+}

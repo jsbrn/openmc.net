@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"></script>
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+<script>document.getElementById("statsLink").style.textDecoration = "underline";</script>
+
+<div class = "content" id = "contentPane">
+    <div id = "moneyStats">
+        <div id = "playerStats">
+            <center><img src = "/images/loading.gif"></img></center>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var io = io();
+    
+    io.on("connect", function(message) {
+        console.log("Connected to socket server!");
+        io.emit("request stats", "")
+    });
+
+    io.on("disconnect", function(message) {
+        console.log("Disconnected from server :(");
+    });
+
+    io.on("stats", function(data) {
+        console.log("Received statistics: "+data);
+        var stats = data.split(" ");
+        var playerStatsHTML = "<table class = 'invisible-centered'>"
+            + "<tr><th>Most Trustworthy</th><th>Least Trustworthy</th><th>Highest Donation</th></tr>"
+            + "<tr>"
+                + "<td width = '33%'><img src = 'https://www.mc-heads.net/body/"+stats[0]+"/128' height = '128px'></td>"
+                + "<td width = '33%'><img src = 'https://www.mc-heads.net/body/"+stats[2]+"/128' height = '128px'></td>"
+                + "<td width = '33%'><img src = 'https://www.mc-heads.net/body/"+stats[4]+"/128' height = '128px'></td>"
+            + "</tr>"
+            + "<tr>"
+                + "<td width = '33%'>"+stats[0]+" ("+Number(stats[1])+" reputation)</td>"
+                + "<td width = '33%'>"+stats[2]+" ("+Number(stats[3])+" reputation)</td>"
+                + "<td width = '33%'>"+stats[4]+" (donated $50)</td>"
+            + "</tr>"
+        + "</table>";
+        document.getElementById("playerStats").innerHTML = playerStatsHTML;
+        //refreshChart();
+    });
+
+</script>
+
+<script>
+
+    function refreshChart() {
+        var data = {
+            // A labels array that can contain any sort of values
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+            // Our series array that contains series objects or in this case series data arrays
+            series: [
+                [5, 2, 4, 2, 0]
+            ]
+        };
+
+        // Create a new line chart object where as first parameter we pass in a selector
+        // that is resolving to our chart container element. The Second parameter
+        // is the actual data object.
+        new Chartist.Line('.chart', data);
+    }
+    
+
+</script>

@@ -1,0 +1,25 @@
+<script>document.getElementById("contactLink").style.textDecoration = "underline";</script>
+
+<div class = "content form">
+
+    <form name = "contactForm" method = "post" action = "/contact/submit">
+        <label for = "username"><b>Username</b></label>
+        <input type="text" name="username" maxlength="50" size="30"></input>
+        <br><br>
+        <label for = "email"><b>Email</b></label>
+        <input type="text" name="email" maxlength="50" size="30"></input>
+        <br><br>
+        <label for "reason"><b>Message</b></label>
+        <select name = "reason">
+            <option value = "appeal">Ban Appeal</option>
+            <option value = "report">Abusive Player</option>
+            <option value = "bug">Bug Report</option>
+            <option value = "feedback">Questions and Feedback</option>
+            <option value = "other">Other</option>
+        </select>
+        <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+        <br><br>
+        <button type="submit">Submit</button>
+        <i id = "submitStatus">Your message will be sent to Computerology.</i>
+    </form>
+</div>

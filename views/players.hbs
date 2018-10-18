@@ -1,0 +1,48 @@
+<script>document.getElementById("playersLink").style.textDecoration = "underline";</script>
+
+<div class = "content">
+	<table class = "default" id = "playerTable">
+		<tr><td><center><img src = "/images/loading.gif"></img></center></td></tr>
+	</table>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var io = io();
+    
+    io.on("connect", function(message) {
+        console.log("Connected to socket server from players page!");
+		io.emit("request player list", "")
+    });
+
+    io.on("disconnect", function(message) {
+        console.log("Disconnected from server :(");
+    });
+
+    io.on("player list", function(playerDataString) {
+        console.log("Received player data: "+playerDataString);
+		var players = playerDataString.split("\n");
+		var playerCount = players.length;
+		var html = "<tr>" +
+			"<th>Player</th>" +
+			"<th>Skin</th>" +
+			"<th>Reputation</th>" +
+		"</tr>";
+		for (var i = 0; i < playerCount; i++) {
+			var data = players[i].split(" ");
+			var rep = Number(data[4]);
+			var repColor = rep > 0 ? "green" : (rep < 0 ? "red" : "black");
+			var isMember = data[3] == "true";
+			var isOnline = data[6] == "true";
+			var isBanned = data[7] == "true"; //pull data from stats
+			var iconClass = (isBanned ? "banned" : (isOnline ? "online" : "offline"))+(isMember ? "-member" : "");
+
+			var playerHTML = "<tr><td><span title = '"+(isMember ? "Paid Member" : "Free Member")+" ("+iconClass.replace("-member", "")+")' class = "+iconClass+">"+data[0]+"</span></td>"
+				+ "<td><img src = 'https://www.mc-heads.net/body/"+data[1]+"/12' height = '48px'></td>"
+				+ "<td><b class = '"+repColor+"-bold'>"+rep+"</b></td>"
+				+ "</tr>";
+			html += playerHTML;
+		}
+        document.getElementById("playerTable").innerHTML = html;
+    });
+</script>
