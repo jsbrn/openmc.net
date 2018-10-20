@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars')
 //load database
-//const database = require('./app/database.js');
+const database = require('./app/database.js');
 //define server instance with 'http' module, passing in the express instance
 const server = require('http').createServer(app);
 
@@ -89,6 +89,7 @@ const port = 80;
 server.listen(port, function(err) {
     if (err) console.log("An error occurred.");
     console.log("Server started on port "+port);
+    database.connect();
 });
 
 console.log("db url: "+process.env.MONGODB_URL);
