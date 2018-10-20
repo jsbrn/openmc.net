@@ -1,9 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb+srv://kay:"+process.env.MONGODB_PASSWORD+"@cluster0.mongodb.net/openmc";
 var database;
-var Tile = require('../app/tiles.js');
-var socket = require('../app/socket.js');
-var board = require('../app/board.js');
 
 function connect() {
     MongoClient.connect(url, function(err, db) {
