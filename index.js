@@ -54,12 +54,6 @@ app.get('/players', (request, response) => {
     });
 });
 
-app.get('/membership', (request, response) => {
-    response.render("membership", {
-        layout: "main"
-    });
-});
-
 app.get('/stats', (request, response) => {
     response.render("stats", {
         layout: "main"
