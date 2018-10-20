@@ -102,6 +102,10 @@ a:hover {
 	color: #31ea62;
 }
 
+.disabled, .disabled:hover {
+	color: gray;
+}
+
 a.ul {
 	text-decoration: underline;
 }

@@ -7,9 +7,6 @@ const exphbs = require('express-handlebars')
 //const database = require('./app/database.js');
 //define server instance with 'http' module, passing in the express instance
 const server = require('http').createServer(app);
-//load and init socket.js using the socketIO instance, which is created using the above http server instance
-const socket = require("./app/socket.js");
-socket.init(require('socket.io')(server));
 
 /*Set the Handlebars options*/
 app.engine('.hbs', exphbs({
@@ -72,6 +69,16 @@ app.post('/contact/submit', (request, response) => {
     });
 });
 
+//POST api for Spigot to connect to
+
+app.use(express.urlencoded())
+app.post("/post/update", (request, response) => {
+    response.send(request.body);
+});
+app.post("/post/keep_alive", (request, response) => {
+    response.send(request.body);
+});
+
 //catchall and 404
 app.get('*', (request, response) => {
     response.render("404", {});
@@ -83,3 +90,5 @@ server.listen(port, function(err) {
     if (err) console.log("An error occurred.");
     console.log("Server started on port "+port);
 });
+
+console.log("db url: "+process.env.MONGODB_URL);

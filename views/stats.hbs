@@ -10,40 +10,6 @@
         </div>
     </div>
 </div>
-
-<script src="/socket.io/socket.io.js"></script>
-<script>
-    var io = io();
-    
-    io.on("connect", function(message) {
-        console.log("Connected to socket server!");
-        io.emit("request stats", "")
-    });
-
-    io.on("disconnect", function(message) {
-        console.log("Disconnected from server :(");
-    });
-
-    io.on("stats", function(data) {
-        console.log("Received statistics: "+data);
-        var stats = data.split(" ");
-        var playerStatsHTML = "<table class = 'invisible-centered'>"
-            + "<tr><th>Most Trustworthy</th><th>Least Trustworthy</th><th>Highest Donation</th></tr>"
-            + "<tr>"
-                + "<td width = '33%'><img src = 'https://www.mc-heads.net/body/"+stats[0]+"/128' height = '128px'></td>"
-                + "<td width = '33%'><img src = 'https://www.mc-heads.net/body/"+stats[2]+"/128' height = '128px'></td>"
-                + "<td width = '33%'><img src = 'https://www.mc-heads.net/body/"+stats[4]+"/128' height = '128px'></td>"
-            + "</tr>"
-            + "<tr>"
-                + "<td width = '33%'>"+stats[0]+" ("+Number(stats[1])+" reputation)</td>"
-                + "<td width = '33%'>"+stats[2]+" ("+Number(stats[3])+" reputation)</td>"
-                + "<td width = '33%'>"+stats[4]+" (donated $50)</td>"
-            + "</tr>"
-        + "</table>";
-        document.getElementById("playerStats").innerHTML = playerStatsHTML;
-        //refreshChart();
-    });
-
 </script>
 
 <script>
