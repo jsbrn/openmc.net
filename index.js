@@ -89,6 +89,7 @@ const port = 80;
 server.listen(port, function(err) {
     if (err) console.log("An error occurred.");
     console.log("Server started on port "+port);
-    console.log("Environment variables: "+process.env);
+    console.log("Environment variables: "
+        +process.env.NOW+", "+process.env.MONGODB_USERNAME+", "+process.env.MONGODB_PASSWORD);
     database.connect();
 });
