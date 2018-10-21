@@ -1,10 +1,10 @@
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://kay:"+process.env.MONGODB_PASSWORD+"@cluster0.mongodb.net/openmc";
+var url = "mongodb+srv://"+process.env.MONGODB_USERNAME+":"+process.env.MONGODB_PASSWORD+"@cluster0-j4cuz.mongodb.net/test?retryWrites=true";
 var database;
 
 function connect() {
     MongoClient.connect(url, function(err, db) {
-        if (err) { console.log("Error connecting to database: "+err.message); return; }
+        if (err) { console.log("Error connecting to database at URL "+url+" : "+err.message); return; }
         database = db.db("openmc");
         database.createCollection("default_table", function(err, res) {});
     });

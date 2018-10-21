@@ -1,6 +1,7 @@
 {
     "env": {
-        "MONGODB_PASSWORD": "@mongodb_password"
+        "MONGODB_PASSWORD": "@mongodb_password",
+        "MONGODB_USERNAME": "@mongodb_username"
     },
 
     "alias": "openmc.net"
