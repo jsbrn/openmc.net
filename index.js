@@ -39,6 +39,13 @@ app.get('/about', (request, response) => {
     });
 });
 
+app.get('/map', (request, response) => {
+    response.render("redirect", {
+        layout: "main",
+        url: "http://167.114.65.184:25621/?worldname=world&mapname=surface&zoom=6&x=-662&y=64&z=273"
+    });
+});
+
 app.get('/updates', (request, response) => {
     response.render("updates", {
         layout: "main"
