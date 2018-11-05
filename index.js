@@ -7,6 +7,9 @@ const exphbs = require('express-handlebars')
 const database = require('./app/database.js');
 //define server instance with 'http' module, passing in the express instance
 const server = require('http').createServer(app);
+//if not running on Now instance, require dotenv
+//(reads environment variables from a .env file on the local repo)
+if (process.env.NOW == undefined) require('dotenv').config()
 
 /*Set the Handlebars options*/
 app.engine('.hbs', exphbs({
