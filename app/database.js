@@ -9,7 +9,7 @@ function connect() {
     MongoClient.connect(url, function(err, db) {
         if (err) { console.log("Error connecting to database at URL "+url+" : "+err.message); return; }
         database = db.db("openmc");
-        database.createCollection("default_table", function(err, res) {});
+        console.log("Connected to database!");
     });
 }
 

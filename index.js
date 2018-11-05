@@ -44,24 +44,31 @@ app.get('/about', (request, response) => {
 
 app.get('/map', (request, response) => {
     response.render("redirect", {
-        layout: "main",
-        url: "http://167.114.65.184:25621/?worldname=world&mapname=surface&zoom=6&x=-662&y=64&z=273"
+        layout: "blank",
+        url: "http://167.114.65.184:25621/?worldname=world&mapname=surface&zoom=5&x=-643&y=64&z=273"
     });
 });
 
-app.get('/updates', (request, response) => {
-    response.render("updates", {
-        layout: "main"
+app.get('/news', (request, response) => {
+    database.get("news", {}, function(err, results) {
+        response.render("news", {
+            layout: "main",
+            posts: results
+        });
     });
 });
 
 app.get('/players', (request, response) => {
-    response.render("players", {
-        layout: "main"
+    database.get("players", {}, function(err, results) {
+        response.render("players", {
+            layout: "main",
+            players: results
+        });
     });
+    
 });
 
-app.get('/stats', (request, response) => {
+app.get('/statistics', (request, response) => {
     response.render("stats", {
         layout: "main"
     });
@@ -69,6 +76,12 @@ app.get('/stats', (request, response) => {
 
 app.get('/contact', (request, response) => {
     response.render("contact", {
+        layout: "main"
+    });
+});
+
+app.get('/philosophy', (request, response) => {
+    response.render("philosophy", {
         layout: "main"
     });
 });

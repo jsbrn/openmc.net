@@ -1,0 +1,10 @@
+<script>document.getElementById("newsLink").style.textDecoration = "underline";</script>
+
+<div class = "center shadow content">
+		{{#each posts}}
+			<div style = "margin-bottom: 10px;" class = "content">
+				<b>{{title}}</b> <i>- posted by {{author}}</i><br>
+				{{contents}}
+			</div>
+		{{/each}}
+</div>

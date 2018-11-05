@@ -1,7 +1,13 @@
 <script>document.getElementById("playersLink").style.textDecoration = "underline";</script>
 
-<div class = "content">
+<div class = "center content">
 	<table class = "default" id = "playerTable">
-		<tr><td><center><img src = "/images/loading.gif"></img></center></td></tr>
+		<tr><th>Avatar</th><th>Username</th><th>Reputation</th></tr>
+		{{#each players}}
+			<tr>
+				<td><img src = "https://www.mc-heads.net/avatar/{{name}}/32"></td>
+				<td>{{name}}</td>
+				<td>{{rep}}</td>
+		{{/each}}
 	</table>
 </div>
