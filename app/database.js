@@ -13,43 +13,56 @@ function connect() {
     });
 }
 
-function update(collectionName, query, new_values, callback) {
-    if (Object.keys(new_values).length == 0) { 
-        console.log("No new values specified! Will not update "+collectionName+"."); 
-        return; 
-    }
+function update(collectionName, query, new_values, onSuccess, onFailure) {
     var collection = database.collection(collectionName);
-    collection.update(query, {$set: new_values}, function(err, result) {
-        console.log("Updating entries "+[result]+"!");
-        if (err) { console.log("There was an error updating collection "+collectionName+"! "
-                        +err.message); }
-        if (callback) callback(err, result);
+    collection.update(query, {$set: new_values}, function(err, docs) {
+        if (err) { 
+            console.log(err.message); 
+            onFailure();
+        } else {
+            onSuccess(docs);
+        }
     });
 }
 
-function insert(collectionName, entries, callback) {
+function insert(collectionName, entries, onSuccess, onFailure) {
     var collection = database.collection(collectionName);
-    collection.insertMany(entries, function(err, result) {
-        if (err) { console.log(err.message); }
-        callback(err, result);
+    collection.insertMany(entries, function(err, docs) {
+        if (err) { 
+            console.log(err.message); 
+            onFailure();
+        } else {
+            onSuccess(docs);
+        }
     });
 };
 
-function get(collectionName, query, callback) {
+function get(collectionName, findQuery, sortQuery, limit, onSuccess, onFailure) {
     // Get the collection
     var collection = database.collection(collectionName);
     // Find some entries that match
-    collection.find(query).toArray(function(err, docs) {
-        if (err) { console.log(err.message); }
-        callback(err, docs); //perform the defined action on the results (the docs)
+    collection.find(findQuery)
+        .sort(sortQuery)
+        .limit(limit < 0 ? Number.MAX_SAFE_INTEGER : limit)
+        .toArray(function(err, docs) {
+            if (err) { 
+                console.log(err.message); 
+                onFailure();
+            } else {
+                onSuccess(docs);
+            }
     });
 };
 
-function remove(collectionName, query, callback) {
+function remove(collectionName, query, onSuccess, onFailure) {
     var collection = database.collection(collectionName);
-    collection.deleteMany(query, function(err, result) {
-        if (err) { console.log(err.message); }
-        callback(err, result);
+    collection.deleteMany(query, function(err, docs) {
+        if (err) { 
+            console.log(err.message); 
+            onFailure();
+        } else {
+            onSuccess(docs);
+        }
     });
 };
 

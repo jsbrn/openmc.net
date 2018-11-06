@@ -1,13 +1,48 @@
 <script>document.getElementById("playersLink").style.textDecoration = "underline";</script>
 
-<div class = "center content">
+<!--div class = "panel center shadow normal-width">
+	<div class="grid">
+		<div>
+			<center>
+				<img src = 'https://www.mc-heads.net/body/Computerology/64' height = '128px'>
+				<br>
+				<b>Highest Reputation</b><br>
+				Computerology
+			</center>
+		</div>
+		<div>
+			<center>
+				<img src = 'https://www.mc-heads.net/body/SimpleScott/64' height = '128px'>
+				<br>
+				<b>Most Active</b><br>
+				SimpleScott
+			</center>
+		</div>
+		<div>
+			<center>
+				<img src = 'https://www.mc-heads.net/body/Moosha/64' height = '128px'>
+				<br>
+				<b>Top Donator</b><br>
+				Moosha
+			</center>
+		</div>
+	</div>
+</div>
+<br-->
+<div class = "panel center shadow normal-width">
 	<table class = "default" id = "playerTable">
 		<tr><th>Avatar</th><th>Username</th><th>Reputation</th></tr>
 		{{#each players}}
 			<tr>
-				<td><img src = "https://www.mc-heads.net/avatar/{{name}}/32"></td>
-				<td>{{name}}</td>
-				<td>{{rep}}</td>
+				<td>
+					<img src = "https://www.mc-heads.net/avatar/{{name}}/32">
+				</td>
+				<td>
+					<span title = "{{#playerStatusDesc this}}{{/playerStatusDesc}}" class = "{{#playerStatus this}}{{/playerStatus}}">{{name}}</span>
+					<a href = "/player/{{name}}"> 🔗</a>
+				</td>
+				<td><b class = "{{#formatRep rep}}{{/formatRep}}">{{rep}}</b></td>
+			</tr>
 		{{/each}}
 	</table>
 </div>

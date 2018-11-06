@@ -1,3 +1,5 @@
+html {overflow-y: scroll;}
+
 body {
 	background: url("../images/bg.png") no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -7,39 +9,51 @@ body {
     font-family: 'Quicksand', 'Times New Roman', sans-serif;
 }
 
-/*Panels/navbar*/
+/*ATTRIBUTES*/
 
-.content, .navbar {
+.padded {
+	padding: 10px;
+}
+
+.shadow {
+	-webkit-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
+	box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
+}
+
+.panel {
 	background: #fff;
 	padding: 10px;
-
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	border: 2px solid #000000;
-	
-}
-
-.navbar {
-	-webkit-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
-	box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
-	text-align: center;
-	display: inline-block;
-}
-
-.shadow, .navbar {
-	-webkit-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
-	box-shadow: 3px 3px 12px 1px rgba(0,0,0,0.75);
 }
 
 .center {
 	margin: 0 auto;
-	width : 95%;
+}
+
+.fit-width {
+	text-align: center;
+	display: inline-block;
+}
+
+.normal-width {
+	width : 80%;
 	max-width: 900px;
 	min-width: 600px;
 }
+
+.narrow-width {
+	width: 600px;
+}
+
+.full-width {
+	width: 95%;
+}
+
+/*ELEMENTS AND SUCH*/
 
 .grid {
     display: grid;
@@ -47,16 +61,15 @@ body {
 	grid-gap: 10px;
 }
 
-.form {
-	width: 500px;
-	box-shadow: none;
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
 
-.full {
-	width: 95%;
-}
 
-/*Default table style*/
+/*Tables*/
 
 table.default {
 	width: 100%;
@@ -99,7 +112,7 @@ table.invisible-centered {
 	border-collapse: collapse;
 }
 
-/*Some custom stuff*/
+/*SOME CUSTOM STUFF*/
 
 a {
 	color: #2c9c28;
@@ -149,36 +162,36 @@ a.ul {
 }
 
 .online {
-	background-image: url("../images/online.png");
+	background-image: url("../images/icons/status/online.png");
 }
 
 .offline {
-	background-image: url("../images/offline.png");
+	background-image: url("../images/icons/status/offline.png");
 }
 
 .banned {
-	background-image: url("../images/banned.png");
+	background-image: url("../images/icons/status/banned.png");
 }
 
-.online-member {
-	background-image: url("../images/online-member.png");
+.online-guest {
+	background-image: url("../images/icons/status/online-guest.png");
 }
 
-.offline-member {
-	background-image: url("../images/offline-member.png");
+.offline-guest {
+	background-image: url("../images/icons/status/offline-guest.png");
 }
 
-.banned-member {
-	background-image: url("../images/banned-member.png");
+.banned-guest {
+	background-image: url("../images/icons/status/banned-guest.png");
 }
 
-.online, .offline, .banned, .offline-member, .online-member, .banned-member {
+.online, .offline, .banned, .offline-guest, .online-guest, .banned-guest {
 	background-position: left center;
 	background-repeat: no-repeat;
 	padding-left: 40px; /* Or size of icon + spacing */
 }
 
-/*Form stuff*/
+/*Custom form stuff that I won't want to override ever*/
 
 button, input, textarea, select {
 	-webkit-border-radius: 60;
@@ -213,11 +226,6 @@ select {
 
 }
 
-/*IE*/
-select::-ms-expand {
-	display: none;
-}
-
 textarea {
 	border-radius: 5px;
 	background: #ffffff;
@@ -229,4 +237,9 @@ textarea {
 	border-top-right-radius: 0px;
 	resize: none;
 	margin-top: -2px;
+}
+
+/*PANDERING TO INTERNET EXPLORER*/
+select::-ms-expand {
+	display: none;
 }

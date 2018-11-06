@@ -1,0 +1,26 @@
+<div class = "panel center narrow-width shadow">
+    <a href = "/players">← back to player list</a>
+    <center>
+        <b style = "font-size: 24px;">{{player.name}}</b><br>
+        <span title = "{{#playerStatusDesc player}}{{/playerStatusDesc}}" class = "{{#playerStatus player}}{{/playerStatus}}"></span>
+    </center>
+    <br>
+    <div class = "grid2">
+        <div>
+            <center>
+                <img src = 'https://www.mc-heads.net/body/{{player.name}}/128'>
+            </center>
+        </div>
+        <div>
+            <table class = "default">
+                <tr><th>Reputation</th><th><b class = "{{#formatRep player.rep}}{{/formatRep}}">{{player.rep}}</b></th></tr>
+                <tr><td>First joined</td><td>{{player.first_join}}</td></tr>
+                <tr><td>Plots owned</td><td>{{player.plots_owned}}</td></tr>
+                <tr><td>Friends with</td><td>{{player.friend_count}}</td></tr>
+                <tr><td>Ban count</td><td>{{player.ban_count}}</td></tr>
+                <tr><td>Server time remaining</td><td>{{player.hours_remaining}} hours</td></tr>
+            </table>
+        </div>
+        <br>
+    </div>
+</div>
