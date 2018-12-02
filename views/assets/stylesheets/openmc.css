@@ -1,0 +1,109 @@
+
+.bg {
+	background: url("../images/bg.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.shadow {
+	-webkit-box-shadow: 3px 3px 8px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 3px 8px 1px rgba(0,0,0,0.75);
+	box-shadow: 3px 3px 8px 1px rgba(0,0,0,0.75);
+}
+
+.panel, .info-panel, .success-panel, .failure-panel {
+	background: #fff;
+	padding: 15px;
+	padding-top: 10px;
+	-webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.25);
+}
+
+.info-panel {
+	background: #efe7a7;
+	color: black;
+}
+
+.success-panel {
+	background: #82db86;
+	color: #163816;
+}
+
+.failure-panel {
+	background: #d14545;
+	color: white;
+}
+
+.navlink {
+	color: yellow;
+	font-style: capitalize;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	margin-right: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navlink:hover {
+	color: white;
+}
+
+.green-bold {
+	font-weight: bold;
+	font-size: 24px;
+	color: green;
+}
+
+.red-bold {
+	font-weight: bold;
+	font-size: 24px;
+	color: red;
+}
+
+.black-bold {
+	font-weight: bold;
+	font-size: 24px;
+	color: black;
+}
+
+.white {
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.online {
+	background-image: url("../images/icons/status/online.png");
+}
+
+.offline {
+	background-image: url("../images/icons/status/offline.png");
+}
+
+.banned {
+	background-image: url("../images/icons/status/banned.png");
+}
+
+.online-guest {
+	background-image: url("../images/icons/status/online-guest.png");
+}
+
+.offline-guest {
+	background-image: url("../images/icons/status/offline-guest.png");
+}
+
+.banned-guest {
+	background-image: url("../images/icons/status/banned-guest.png");
+}
+
+.online, .offline, .banned, .offline-guest, .online-guest, .banned-guest {
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 40px; /* Or size of icon + spacing */
+}
+
+table {
+	font-family: Arial, Helvetica, sans-serif;
+}

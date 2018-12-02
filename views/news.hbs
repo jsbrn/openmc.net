@@ -1,10 +1,10 @@
-<script>document.getElementById("newsLink").style.textDecoration = "underline";</script>
-
-<div class = "panel center shadow normal-width">
-		{{#each posts}}
-			<div style = "margin-bottom: 10px;" class = "panel">
-				<b>{{title}}</b> <i>- posted by {{author}}</i><br>
+<div class = "container" style = "margin-top: 15px;">
+	{{#each posts}}
+		<div class = "row" style = "margin-bottom: 10px;">
+			<div class = "column panel">
+				<b>{{title}}</b> (posted by {{author}}<br>
 				{{contents}}
 			</div>
-		{{/each}}
+		</div>
+	{{/each}}
 </div>

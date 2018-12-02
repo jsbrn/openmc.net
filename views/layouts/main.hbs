@@ -5,23 +5,31 @@
 		<meta name="OpenMC: A high quality vanilla Minecraft server.">
 		<link rel="shortcut icon" type="image/png" href="images/icons/favicon.png"/>
 		<link rel="stylesheet" href="/css/stylesheet.css">
-		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+		<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/css/normalize.css">
+		<link rel="stylesheet" href="/css/skeleton.css">
+		<link rel="stylesheet" href="/css/openmc.css">
 	</head>
 
-	<body>
-		<br><center><img src = "/images/logo.png"></img></center><br>
-		<center>
-			<div class="panel fit-width shadow">
-				<a id = "aboutLink" class = "navlink" href = "/about">ABOUT</a>
-				<a id = "newsLink" class = "navlink disabled" href = "#">NEWS</a>
-				<a id = "storeLink" class = "navlink" href = "https://officialopenmc.buycraft.net/" target = "_blank">STORE</a>
-				<a id = "playersLink" class = "navlink" href = "/players">PLAYERS</a>
-				<a id = "statsLink" class = "navlink disabled" href = "#">STATISTICS</a>
-				<a id = "mapLink" class = "navlink" href = "/map">MAP</a>
-				<a id = "contactLink" class = "navlink disabled" href = "#">CONTACT</a>
+	<body class = "bg">
+		<div class="container" style = "margin-top: 15px;">
+			<div class="row">
+				<div class="column">
+					<img src = "/images/logo.png" class = "u-max-full-width"></img>
+				</div>
 			</div>
-		</center>
-		<br>
+			<div class = "row" style = "margin-top: 15px;">
+				<div class="column">
+					<a id = "newsLink" class = "navlink" href = "/news">NEWS</a>
+					<a id = "storeLink" class = "navlink" href = "https://officialopenmc.buycraft.net/" target = "_blank">STORE</a>
+					<a id = "playersLink" class = "navlink" href = "/players">PLAYERS</a>
+					<a id = "statsLink" class = "navlink" href = "/stats">STATISTICS</a>
+					<a id = "mapLink" class = "navlink" href = "/map">MAP</a>
+					<a id = "contactLink" class = "navlink" href = "/contact">CONTACT</a>
+					<a id = "aboutLink" class = "navlink" href = "/about">ABOUT</a>
+				</div>
+			</div>
+		</div>
 		{{{body}}}
 	</body>
 

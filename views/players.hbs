@@ -1,48 +1,49 @@
-<script>document.getElementById("playersLink").style.textDecoration = "underline";</script>
+<div class = "container" style = "margin-top: 15px;">
+	<div class = "two-thirds column panel">
+		<h3>Player List</h3>
+		<p>Thanks for playing on OpenMC!</p>
+		<table class = "u-full-width">
+			<tbody>
+				{{#each all}}
+				<tr>
+					<td>
+						<center>
+							<img src = "https://www.mc-heads.net/head/{{name}}/48">
+						</center>
+					</td>
+					<td>
+						<span title = "{{#playerStatusDesc this}}{{/playerStatusDesc}}" class = "{{#playerStatus this}}{{/playerStatus}}">{{name}}</span>
+					</td>
+					<td>	
+						<b class = "{{#formatRep rep}}{{/formatRep}}">{{rep}}</b>
+					</td>
+					<td>
+						<a href = "/player/{{name}}">
+							<button>View player</button>
+						</a>
+					</td>
+				</tr>
+				{{/each}}	
+			</tbody>
+		</table>
+	</div>
+	<div class = "one-third column info-panel">
+		<h3>Statistics</h3>
 
-<!--div class = "panel center shadow normal-width">
-	<div class="grid">
-		<div>
-			<center>
-				<img src = 'https://www.mc-heads.net/body/Computerology/64' height = '128px'>
-				<br>
-				<b>Highest Reputation</b><br>
-				Computerology
-			</center>
-		</div>
-		<div>
-			<center>
-				<img src = 'https://www.mc-heads.net/body/SimpleScott/64' height = '128px'>
-				<br>
-				<b>Most Active</b><br>
-				SimpleScott
-			</center>
-		</div>
-		<div>
-			<center>
-				<img src = 'https://www.mc-heads.net/body/Moosha/64' height = '128px'>
-				<br>
-				<b>Top Donator</b><br>
-				Moosha
-			</center>
-		</div>
+		{{all.length}} total players.<br>
+		{{online.length}} online players.<br>
+		{{members.length}} members.<br>
+		{{banned.length}} banned players.
 	</div>
 </div>
-<br-->
-<div class = "panel center shadow normal-width">
-	<table class = "default" id = "playerTable">
-		<tr><th>Avatar</th><th>Username</th><th>Reputation</th></tr>
-		{{#each players}}
-			<tr>
-				<td>
-					<img src = "https://www.mc-heads.net/avatar/{{name}}/32">
-				</td>
-				<td>
-					<span title = "{{#playerStatusDesc this}}{{/playerStatusDesc}}" class = "{{#playerStatus this}}{{/playerStatus}}">{{name}}</span>
-					<a href = "/player/{{name}}"> 🔗</a>
-				</td>
-				<td><b class = "{{#formatRep rep}}{{/formatRep}}">{{rep}}</b></td>
-			</tr>
-		{{/each}}
-	</table>
-</div>
+
+<script>
+	var select = document.getElementById("sorter"),
+	select.addEventListener('change',function(){
+		alert('changed');
+	});
+	select.addEventListener('click',function(){
+		select.value = 2;
+		select.dispatchEvent(new Event('change'));
+	});
+</script>

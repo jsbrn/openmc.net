@@ -1,25 +1,41 @@
-<script>document.getElementById("contactLink").style.textDecoration = "underline";</script>
+<div class = "container success-panel" style = "margin-top: 15px;">
+    Your message has been sent!
+</div>
 
-<div class = "panel narrow-width shadow center">
+<div class = "container" style = "margin-top: 15px;">
+    <div class = "one-half column panel">
+        <form>
+            <div class="row">
+                <div class="six columns">
+                    <label for="exampleEmailInput">Your email</label>
+                    <input class="u-full-width" type="email" placeholder="example@host.com" id="exampleEmailInput">
+                </div>
+                <div class="six columns">
+                    <label for="exampleRecipientInput">Reason for contacting</label>
+                    <select class="u-full-width" id="exampleRecipientInput">
+                        <option value="Option 1">General questions</option>
+                        <option value="Option 2">Ban appeal</option>
+                        <option value="Option 3">Reporting a player</option>
+                        <option value="Option 3">Reporting a bug</option>
+                    </select>
+                </div>
+            </div>
+            <label for="exampleMessage">Message</label>
+            <textarea class="u-full-width" placeholder="Write your message here" id="exampleMessage"></textarea>
+            <label class="example-send-yourself-copy">
+            <input type="checkbox">
+            <span class="label-body">Send a copy to yourself</span>
+            </label>
+            <input class="button-primary" type="submit" value="Submit">
+        </form>
+    </div>
 
-    <form name = "contactForm" method = "post" action = "/contact/submit">
-        <label for = "username"><b>Username</b></label>
-        <input type="text" name="username" maxlength="50" size="30"></input>
+    <div class = "one-half column info-panel">
+        <h4>Contact me</h4>
+        If you have any questions or concerns, please use the form to the left. It will send an email to me.
+        I will try my best to get back to you as soon as I can.
         <br><br>
-        <label for = "email"><b>Email</b></label>
-        <input type="text" name="email" maxlength="50" size="30"></input>
-        <br><br>
-        <label for "reason"><b>Message</b></label>
-        <select name = "reason">
-            <option value = "appeal">Ban Appeal</option>
-            <option value = "report">Abusive Player</option>
-            <option value = "bug">Bug Report</option>
-            <option value = "feedback">Questions and Feedback</option>
-            <option value = "other">Other</option>
-        </select>
-        <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-        <br><br>
-        <button type="submit">Submit</button>
-        <i id = "submitStatus">Your message will be sent to Computerology.</i>
-    </form>
+        <i>- Computerology, OpenMC creator</i>
+    </div>
+    
 </div>
