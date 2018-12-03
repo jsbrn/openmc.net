@@ -7,6 +7,14 @@
 	background-size: cover;
 }
 
+.top-space {
+	margin-top: 15px;
+}
+
+.bottom-space {
+	margin-bottom: 15px;
+}
+
 .shadow {
 	-webkit-box-shadow: 3px 3px 8px 1px rgba(0,0,0,0.75);
 	-moz-box-shadow: 3px 3px 8px 1px rgba(0,0,0,0.75);
@@ -71,7 +79,7 @@
 
 .white {
 	color: white;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 .online {

@@ -4,6 +4,7 @@ const express = require('express')
 const app = express()
 const exphbs = require('express-handlebars');
 const database = require('./app/database.js');
+const gamedig = require('gamedig');
 //load mailer
 const mailer = require('./app/mailer.js');
 //if not running on Now instance, require dotenv
@@ -48,8 +49,25 @@ app.use('/common',express.static(path.join(__dirname, 'app/common')));
 /*HTTP REQUEST HANDLERS*/
 
 app.get('/', (request, response) => {
-    response.render("news", {
-        layout: "main"
+
+    database.get("news", {}, {}, 10, function(news_posts) {
+        gamedig.query({
+            type: 'minecraft',
+            host: '167.114.65.184',
+            port: 25620
+        }).then((state) => {
+            response.render("home", {
+                layout: "main",
+                status: state,
+                posts: news_posts
+            });
+        }).catch((error) => {
+            response.render("home", {
+                layout: "main",
+                status: undefined,
+                posts: news_posts
+            });
+        });
     });
 });
 
@@ -95,7 +113,7 @@ app.get('/player/:playerName', (request, response) => {
     });
 });
 
-app.get('/statistics', (request, response) => {
+app.get('/stats', (request, response) => {
     response.render("stats", {
         layout: "main"
     });

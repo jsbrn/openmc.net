@@ -1,0 +1,82 @@
+<div class = "container" style = "margin-top: 15px;">
+	<div class = "row">
+		<div class = "info-panel">
+			<b>The Capital City is currently under construction.</b><br>
+			It will have an arena and a marketplace to buy and sell with emeralds.<br>
+			<i>Use the contact page above if you want to help build it. You will receive a badge on your player page.</i>
+		</div>
+	</div>
+	<div class = "row" style = "margin-top: 15px;">
+		<div class = "two-thirds column panel">
+			<h3>Why play on OpenMC?</h3>
+			<div class = "row" style = "margin-bottom: 10px;">
+				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/friends.png"></img></div>
+				<div class = "one-half column"><b>Community oriented</b><br>
+					Important server decisions are voted on by the community (like kicking abusive players). 
+					Players can earn community badges that are displayed here on the website.
+				</div>
+			</div>
+			<div class = "row" style = "margin-bottom: 10px;">
+				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/griefing.png"></img></div>
+				<div class = "one-half column"><b>No griefing</b><br>
+					All players have a reputation score. If it drops too low, an <b>automatic</b> temporary ban is given. 
+					All block damage can be reverted using <a target = "blank_" href = "https://www.spigotmc.org/resources/coreprotect.8631/">CoreProtect</a>.
+				</div>
+			</div>
+			<div class = "row" style = "margin-bottom: 10px;">
+				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/spam.png"></img></div>
+				<div class = "one-half column"><b>No chat spam</b><br>You can choose to hide global chat and only see messages from friends. The server will not spam the chat.</div>
+			</div>
+			<div class = "row" style = "margin-bottom: 10px;">
+				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/reset.png"></img></div>
+				<div class = "one-half column"><b>No world resets</b><br>The world will never be reset unless the community votes for it.</div>
+			</div>
+			<div class = "row" style = "margin-bottom: 10px;">
+				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/random.png"></img></div>
+				<div class = "one-half column"><b>Random spawns</b><br>Everyone starts in a random location within a 1500-block radius around the Capital City.</div>
+			</div>
+			<div class = "row" style = "margin-bottom: 10px;">
+				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/banner.png"></img></div>
+				<div class = "one-half column"><b>Easy land claiming</b><br>
+					No commands. Just place a banner to claim a 25-block radius where you are standing.
+					All players start with 1 available land plot.
+				</div>
+			</div>
+		</div>
+		<div class = "one-third column">
+			<div class = "row panel">
+				<h3>Server Status</h3>
+				{{#if status}}
+					<span class = "green-bold">Online</span><br>
+					<b>{{status.raw.players.online}}/{{status.raw.players.max}}</b> players<br>
+					167.114.65.184:25620
+				{{else}}
+					<span class = "red-bold">Offline</span><br>
+					167.114.65.184:25620
+				{{/if}}
+			</div>
+			<div class = "row panel" style = "margin-top: 10px;">
+				<h3>Join us!</h3>
+				<a target = "blank_" href = "https://discord.gg/sa8TNME">
+					<img class = "u-max-full-width" src = "/images/discord.png"></img>
+				</a><br>
+				If you like the server, you can become a permanent member.
+				<a href = "https://officialopenmc.buycraft.net/" target = "_blank">
+					<button class = "button-primary top-space">Become a member</button>
+				</a>
+			</div>
+			<div class = "row panel" style = "margin-top: 10px;">
+				<h3>Latest Activity</h3>
+				{{#each posts}}
+					<div class = "row" style = "margin-bottom: 10px;">
+						<div class = "panel">
+							<b>{{title}}</b><br>
+							<i>{{subtitle}}</i><br>
+							{{contents}}
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>

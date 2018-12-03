@@ -1,7 +1,6 @@
 <div class = "container" style = "margin-top: 15px;">
 	<div class = "two-thirds column panel">
 		<h3>Player List</h3>
-		<p>Thanks for playing on OpenMC!</p>
 		<table class = "u-full-width">
 			<tbody>
 				{{#each all}}
@@ -27,13 +26,13 @@
 			</tbody>
 		</table>
 	</div>
-	<div class = "one-third column info-panel">
+	<div class = "one-third column panel">
 		<h3>Statistics</h3>
 
-		{{all.length}} total players.<br>
-		{{online.length}} online players.<br>
-		{{members.length}} members.<br>
-		{{banned.length}} banned players.
+		<span class = "black-bold">{{all.length}}</span> total players.<br>
+		<span class = "green-bold">{{online.length}}</span> online players.<br>
+		<span class = "green-bold">{{members.length}}</span> members.<br>
+		<span class = "red-bold">{{banned.length}}</span> banned players.
 	</div>
 </div>
 

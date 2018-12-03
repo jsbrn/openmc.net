@@ -1,42 +1,40 @@
 <div class = "container panel" style = "margin-top: 15px;">
-    <div class = "row">
-        <div class = "one-half column">
-            <div class = "row">
-                <a href = "/players"><button>← Back to player list</button></a>
-            </div>
-            <div class = "row">
-                <center>
-                    <img src = 'https://www.mc-heads.net/body/{{player.name}}/128'><br>
-                </center>
-            </div>
-            <div class = "row" style = "margin-top: 15px;">
-                <center>
-                    <span title = "{{#playerStatusDesc player}}{{/playerStatusDesc}}" class = "{{#playerStatus player}}{{/playerStatus}}"></span>
-                    <b style = "font-size: 24px;">{{player.name}}</b>
-                </center>
-            </div>
-            <div class = "row">
-                <center>
-                    <button class = "button-primary">Message player</button>
-                    <button>Report player</button>
-                </center>
-            </div>
+    <div class = "one-half column">
+        <div class = "row">
+            <a href = "/players"><button>← Back to player list</button></a>
         </div>
-        <div class = "one-half column">
-            <div class = "row">
-                <table class = "default">
-                    <tr><th>Reputation</th><th><b class = "{{#formatRep player.rep}}{{/formatRep}}">{{player.rep}}</b></th></tr>
-                    <tr><td>First joined</td><td>{{player.first_join}}</td></tr>
-                    <tr><td>Plots owned</td><td>{{player.plots_owned}}</td></tr>
-                    <tr><td>Friends with</td><td>{{player.friend_count}}</td></tr>
-                    <tr><td>Ban count</td><td>{{player.ban_count}}</td></tr>
-                    <tr><td>Server time remaining</td><td>{{player.hours_remaining}} hours</td></tr>
-                </table>
-            </div> 
-            <div class = "row">
-                <h5>Badges</h5>
-                This player has no special badges.
-            </div>
+        <div class = "row">
+            <center>
+                <img src = 'https://www.mc-heads.net/body/{{player.name}}/128'><br>
+            </center>
+        </div>
+        <div class = "row" style = "margin-top: 15px;">
+            <center>
+                <span title = "{{#playerStatusDesc player}}{{/playerStatusDesc}}" class = "{{#playerStatus player}}{{/playerStatus}}"></span>
+                <b style = "font-size: 24px;">{{player.name}}</b>
+            </center>
+        </div>
+        <div class = "row">
+            <center>
+                <button class = "button-primary">Message player</button>
+                <button>Report player</button>
+            </center>
+        </div>
+    </div>
+    <div class = "one-half column">
+        <div class = "row">
+            <table class = "default">
+                <tr><th>Reputation</th><th><b class = "{{#formatRep player.rep}}{{/formatRep}}">{{player.rep}}</b></th></tr>
+                <tr><td>First joined</td><td>{{player.first_join}}</td></tr>
+                <tr><td>Plots owned</td><td>{{player.plots_owned}}</td></tr>
+                <tr><td>Friends with</td><td>{{player.friend_count}}</td></tr>
+                <tr><td>Ban count</td><td>{{player.ban_count}}</td></tr>
+                <tr><td>Server time remaining</td><td>{{player.hours_remaining}} hours</td></tr>
+            </table>
+        </div> 
+        <div class = "row">
+            <h5>Badges</h5>
+            This player has no special badges.
         </div>
     </div>
 </div>
