@@ -6,8 +6,8 @@
 			<i>Use the contact page above if you want to help build it. You will receive a badge on your player page.</i>
 		</div>
 	</div>
-	<div class = "row" style = "margin-top: 15px;">
-		<div class = "two-thirds column panel">
+	<div class = "row">
+		<div class = "two-thirds column panel top-space">
 			<h3>Why play on OpenMC?</h3>
 			<div class = "row" style = "margin-bottom: 10px;">
 				<div class = "one-half column"><img class = "u-max-full-width" src = "/images/features/friends.png"></img></div>
@@ -44,15 +44,16 @@
 			</div>
 		</div>
 		<div class = "one-third column">
-			<div class = "row panel">
+			<div class = "row panel top-space">
 				<h3>Server Status</h3>
 				{{#if status}}
-					<span class = "green-bold">Online</span><br>
+					<span class = "green-bold">Online</span>
 					<b>{{status.raw.players.online}}/{{status.raw.players.max}}</b> players<br>
-					167.114.65.184:25620
+					<b><span class = "" style = "font-family: Arial;">167.114.65.184:25620</span></b><br>
+					({{status.raw.version.name}})
 				{{else}}
 					<span class = "red-bold">Offline</span><br>
-					167.114.65.184:25620
+					<b><span class = "" style = "font-family: Arial;">167.114.65.184:25620</span></b>
 				{{/if}}
 			</div>
 			<div class = "row panel" style = "margin-top: 10px;">
@@ -61,7 +62,7 @@
 					<img class = "u-max-full-width" src = "/images/discord.png"></img>
 				</a><br>
 				If you like the server, you can become a permanent member.
-				<a href = "https://officialopenmc.buycraft.net/" target = "_blank">
+				<a href = "https://officialopenmc.buycraft.net/category/1243223" target = "_blank">
 					<button class = "button-primary top-space">Become a member</button>
 				</a>
 			</div>

@@ -56,6 +56,7 @@ app.get('/', (request, response) => {
             host: '167.114.65.184',
             port: 25620
         }).then((state) => {
+            state.raw.version.name = state.raw.version.name.replace("Spigot", "Minecraft");
             response.render("home", {
                 layout: "main",
                 status: state,
