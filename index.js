@@ -143,11 +143,14 @@ app.post("/api/*", (request, response, next) => {
     else response.sendStatus(403);
 });
 
-app.post("/api/post/update_player/:username", (request, response) => {
+app.post("/api/post/update_player/:uuid", (request, response) => {
     console.log("body.rep = "+request.body.rep);
     console.log("params.rep = "+request.params.rep);
     console.log("query.rep = "+request.query.rep);
-    database.update("players", {name: request.params.username}, {
+    database.exists("players", {uuid: request.params.uuid}, (result) => {
+        
+    });
+    database.update("players", {uuid: request.params.uuid}, {
         name: request.body.name,
         rep: request.body.rep,
         online: request.body.online,

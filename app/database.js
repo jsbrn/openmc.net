@@ -66,6 +66,10 @@ function remove(collectionName, query, onSuccess, onFailure) {
     });
 };
 
+function exists(collectionName, query, callback) {
+    database.get("players", {uuid: request.params.uuid}, {username: -1}, 1, (docs) => { if (docs.length > 0) callback(docs[0]); });
+}
+
 module.exports.connect = connect;
 module.exports.insert = insert;
 module.exports.get = get;
